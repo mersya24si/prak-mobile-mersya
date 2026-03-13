@@ -27,7 +27,7 @@
         android:id="@+id/textNama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Masukkan Nama Kamu"
+        android:text="Masukkan Nama"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="#880E4F"
