@@ -1,5 +1,6 @@
 package com.example.mersyaapps.pertemuan3
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -30,11 +31,14 @@ class ThirdActivity : AppCompatActivity() {
         }
 
         binding.btnKirim.setOnClickListener {
+
             val nomor = binding.inputNoTujuan.text
             Log.e("Klik btnSubmit","Tombol berhasil di tekan. Isi dari inputNama = ")
 
-            Toast.makeText(this, "Pesan berhasil dikirim ke : $nomor", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Pesan ini berhasil dikirim ke : $nomor", Toast.LENGTH_SHORT).show()
 
+            val intent = Intent(this, ThirdResultActivity::class.java)
+            startActivity(intent)
         }
     }
 }
