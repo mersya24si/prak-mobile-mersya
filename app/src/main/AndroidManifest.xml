@@ -12,10 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MersyaApps">
         <activity
+            android:name=".Pertemuan4.FourthActivity"
+            android:exported="false" />
+        <activity
             android:name=".pertemuan3.ThirdResultActivity"
             android:exported="false" />
         <activity
             android:name=".pertemuan3.ThirdActivity"
+            android:exported="false">
+
+        </activity>
+        <activity
+            android:name=".pertemuan3.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Pertemuan2.SecondActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,15 +37,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".pertemuan3.MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Pertemuan2.SecondActivity"
-            android:exported="false"></activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
     </application>
 
 </manifest>
