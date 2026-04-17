@@ -50,7 +50,7 @@ class FourthActivity : AppCompatActivity() {
 
         binding.btnShowAlertDialog.setOnClickListener {
             MaterialAlertDialogBuilder(this)
-                .setTitle("Konfirmasi")
+                .setTitle("Konfirmasii")
                 .setMessage("Apakah Anda yakin ingin melanjutkan?")
                 .setPositiveButton("Ya") { dialog, _ ->
                     dialog.dismiss()
