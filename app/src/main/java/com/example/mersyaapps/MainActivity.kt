@@ -30,6 +30,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.button2.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
+            //menambahkan bagian berikut//
+            intent.putExtra("nama", "Politeknik Caltex Riau")
+            intent.putExtra("asal", "Rumbai")
+            intent.putExtra("usia", 25)
+
             startActivity(intent)
 
         }
