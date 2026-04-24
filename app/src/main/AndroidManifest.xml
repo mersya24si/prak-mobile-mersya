@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MersyaApps">
         <activity
+            android:name=".pertemuan5.WebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan5.FifthActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Pertemuan4.FourthActivity"
             android:exported="false" />
         <activity
@@ -19,24 +32,14 @@
             android:exported="false" />
         <activity
             android:name=".pertemuan3.ThirdActivity"
-            android:exported="false">
-
-        </activity>
-        <activity
-            android:name=".pertemuan3.MainActivity"
             android:exported="false" />
         <activity
             android:name=".Pertemuan2.SecondActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
