@@ -22,32 +22,40 @@ class FifthActivity : AppCompatActivity() {
         binding = ActivityFifthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Hapus padding top sistem bars agar gambar masuk ke area status bar (transparan)
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            // Hanya berikan padding kiri, kanan, bawah. Top dibiarkan agar gambar penuh ke atas.
+            v.setPadding(systemBars.left, 0, systemBars.right, systemBars.bottom)
             insets
         }
+
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Activity Fifth"
-            subtitle = "Ini adalah subtitle"
-            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
+            // Judul sekarang diatur melalui CollapsingToolbar di XML
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
+
         binding.btnWebView.setOnClickListener {
             val intent = Intent(this, WebViewActivity::class.java)
             startActivity(intent)
         }
-
     }
+
+    // Tambahkan ini agar tombol back di toolbar berfungsi
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
+    }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
         return true
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-
             R.id.action_search -> {
                 Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
                 true
