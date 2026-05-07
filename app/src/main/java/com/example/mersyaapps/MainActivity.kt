@@ -1,7 +1,9 @@
 package com.example.mersyaapps
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
@@ -11,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.mersyaapps.Pertemuan4.FourthActivity
 import com.example.mersyaapps.databinding.ActivityFourthBinding
 import com.example.mersyaapps.databinding.ActivityMainBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,6 +30,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
         binding.button2.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
@@ -36,6 +40,26 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("usia", 25)
 
             startActivity(intent)
+
+        }
+        binding.btnLogout.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Konfirmasi")
+                .setMessage("Apakah Anda yakin ingin melanjutkan?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    val editor = sharedPref.edit()
+                    editor.clear()
+                    editor.apply()
+
+                    dialog.dismiss()
+                    val intent = Intent(this, AuthActivity::class.java)
+                    startActivity(intent)
+                }
+                .setNegativeButton("Batal") { dialog, _ ->
+                    dialog.dismiss()
+                    Log.e("Info Dialog","Anda memilih Tidak!")
+                }
+                .show()
 
         }
     }
