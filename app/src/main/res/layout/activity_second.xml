@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="#FFE4EC"
     android:padding="24dp"
-    tools:context=".Pertemuan2.SecondActivity">
+    tools:context=".Home.Pertemuan2.SecondActivity">
 
     <TextView
         android:id="@+id/textView2"

@@ -44,7 +44,7 @@ class AuthActivity : AppCompatActivity() {
                     putString("username", username)
                 }
                 Toast.makeText(this, " $username Login Anda Berhasil !", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, BaseActivity::class.java)
                 intent.putExtra("username", binding.username.text.toString()) // Kuncinya adalah "username"
                 startActivity(intent)
             } else {5

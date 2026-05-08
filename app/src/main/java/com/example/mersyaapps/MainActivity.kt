@@ -1,18 +1,15 @@
 package com.example.mersyaapps
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.mersyaapps.Pertemuan4.FourthActivity
-import com.example.mersyaapps.databinding.ActivityFourthBinding
+import com.example.mersyaapps.Home.Pertemuan4.FourthActivity
 import com.example.mersyaapps.databinding.ActivityMainBinding
+import com.example.mersyaapps.Home.pertemuan7.SeventhActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
@@ -61,6 +58,11 @@ class MainActivity : AppCompatActivity() {
                 }
                 .show()
 
+
+        }
+        binding.button3.setOnClickListener {
+            val intent = Intent(this, SeventhActivity::class.java)
+            startActivity(intent)
         }
     }
 }

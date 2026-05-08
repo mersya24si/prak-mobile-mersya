@@ -1,17 +1,13 @@
-package com.example.mersyaapps.Pertemuan4
+package com.example.mersyaapps.Home.Pertemuan4
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.mersyaapps.MainActivity
 import com.example.mersyaapps.R
 import com.example.mersyaapps.databinding.ActivityFourthBinding
-import com.example.mersyaapps.databinding.ActivityThirdBinding
-import com.example.mersyaapps.pertemuan3.ThirdResultActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 

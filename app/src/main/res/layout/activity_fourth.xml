@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/button"
-    tools:context=".Pertemuan4.FourthActivity">
+    tools:context=".Home.Pertemuan4.FourthActivity">
 
     <Button
         android:id="@+id/button"

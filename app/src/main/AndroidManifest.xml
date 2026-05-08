@@ -15,33 +15,42 @@
         android:theme="@style/Theme.MersyaApps">
         <activity
             android:name=".SplashScreenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.pertemuan7.SeventhActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BaseActivity"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".AuthActivity"
-            android:exported="false"/>
-        <activity
-            android:name=".pertemuan5.WebViewActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan5.FifthActivity"
+            android:name=".AuthActivity"
             android:exported="false" />
         <activity
-            android:name=".Pertemuan4.FourthActivity"
+            android:name=".Home.pertemuan5.WebViewActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan3.ThirdResultActivity"
+            android:name=".Home.pertemuan5.FifthActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan3.ThirdActivity"
+            android:name=".Home.Pertemuan4.FourthActivity"
             android:exported="false" />
         <activity
-            android:name=".Pertemuan2.SecondActivity"
+            android:name=".Home.pertemuan3.ThirdResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.pertemuan3.ThirdActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.Pertemuan2.SecondActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

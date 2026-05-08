@@ -1,4 +1,4 @@
-package com.example.mersyaapps.Pertemuan2
+package com.example.mersyaapps.Home.Pertemuan2
 
 fun main(){
     println("Hai rekan-rekan...")

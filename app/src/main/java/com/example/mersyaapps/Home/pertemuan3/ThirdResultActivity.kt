@@ -1,4 +1,4 @@
-package com.example.mersyaapps.pertemuan3
+package com.example.mersyaapps.Home.pertemuan3
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
