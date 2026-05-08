@@ -43,7 +43,7 @@ class HomeFragment : Fragment() {
         binding.button2.setOnClickListener {
             val intent = Intent(requireContext(), FourthActivity::class.java)
             //menambahkan bagian berikut//
-            intent.putExtra("nama", "Politeknik Caltex Riau")
+            intent.putExtra("nama", "Politeknik Caltex Riauu")
             intent.putExtra("asal", "Rumbai")
             intent.putExtra("usia", 25)
 
