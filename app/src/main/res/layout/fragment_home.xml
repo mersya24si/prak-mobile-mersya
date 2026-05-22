@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#9ED3DC"
+    android:background="#65BF1BD8"
     tools:context=".Home.HomeFragment">
 
     <androidx.appcompat.widget.Toolbar
@@ -12,24 +12,49 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        app:layout_scrollFlags="scroll|enterAlways"
+        app:titleTextColor="@android:color/white"
         app:title="Pertemuan 7"
-        app:titleTextColor="@android:color/white" />
+        app:layout_scrollFlags="scroll|enterAlways"/>
 
+    <!-- TODO: Update blank fragment layout -->
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="Pertemuan 7"
+        android:layout_marginTop="220dp"
+        android:text="Pertemuan4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#E5EEE4"
-        android:textSize="40dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="cukup sekian dan terimakasih" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="288dp"
+        android:text="Pertemuan7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="136dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Pertemuan9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
