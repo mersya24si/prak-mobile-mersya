@@ -13,7 +13,7 @@ class TenthTabsAdapter(activity: AppCompatActivity) :
         return when (position) {
             0 -> TabAFragment()
             1 -> TabBFragment()
-            2 -> TabBFragment()
+            2 -> TabCFragment()
             else -> throw IllegalStateException("Posisi tidak valid")
         }
     }
