@@ -9,12 +9,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.mersyaapps.AuthActivity
 import com.example.mersyaapps.Home.Pertemuan4.FourthActivity
 import com.example.mersyaapps.Home.Pertemuan10.TenthActivity
 import com.example.mersyaapps.Home.pertemuan7.SeventhActivity
 import com.example.mersyaapps.Home.pertemuan9.NinthActivity
+import com.example.mersyaapps.data.api.CatFactApiClient
 import com.example.mersyaapps.databinding.FragmentHomeBinding
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
 
@@ -49,6 +52,8 @@ class HomeFragment : Fragment() {
 
             startActivity(intent)
         }
+        loadCatFact()
+
 
         // Pertemuan 7
         binding.button2.setOnClickListener {
@@ -90,8 +95,16 @@ class HomeFragment : Fragment() {
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun loadCatFact() {
+        lifecycleScope.launch {
+            try {
+                val response = CatFactApiClient.apiService.getCatFact()
+                binding.tvCatFact.text = "\"${response.fact}\""
+            } catch (e: Exception) {
+                binding.tvCatFact.text = "Gagal mengambil fakta kucing."
+            }
+
+
+        }
     }
 }
