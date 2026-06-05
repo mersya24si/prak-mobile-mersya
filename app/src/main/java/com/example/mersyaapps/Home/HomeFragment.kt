@@ -7,15 +7,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mersyaapps.AuthActivity
 import com.example.mersyaapps.Home.Pertemuan4.FourthActivity
 import com.example.mersyaapps.Home.Pertemuan10.TenthActivity
 import com.example.mersyaapps.Home.pertemuan7.SeventhActivity
 import com.example.mersyaapps.Home.pertemuan9.NinthActivity
+import com.example.mersyaapps.Home.photo.PhotoAdapter
 import com.example.mersyaapps.data.api.CatFactApiClient
+import com.example.mersyaapps.data.api.PhotoApiClient
 import com.example.mersyaapps.databinding.FragmentHomeBinding
 import kotlinx.coroutines.launch
 
@@ -54,6 +58,7 @@ class HomeFragment : Fragment() {
         }
         loadCatFact()
 
+        loadPhoto()
 
         // Pertemuan 7
         binding.button2.setOnClickListener {
@@ -93,6 +98,9 @@ class HomeFragment : Fragment() {
                 .setNegativeButton("Tidak", null)
                 .show()
         }
+        binding.btnRefresh.setOnClickListener {
+            loadCatFact()
+        }
     }
 
     private fun loadCatFact() {
@@ -105,6 +113,27 @@ class HomeFragment : Fragment() {
             }
 
 
+        }
+    }
+    private fun loadPhoto() {
+        lifecycleScope.launch {
+            try {
+                val photos = PhotoApiClient.apiService.getPhotos()
+                val adapter = PhotoAdapter(photos)
+                binding.rvGallery.adapter = adapter
+
+                /** List Tampil Vertical*/
+                binding.rvGallery.layoutManager = LinearLayoutManager(requireContext())
+
+                /** List Tampil Horizontal */
+                //binding.rvGallery.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+                /** List Tampil Grid */
+                //binding.rvGallery.layoutManager = GridLayoutManager(requireContext(),2)
+
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), "Gagal memuat gambar", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
