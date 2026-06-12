@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.mersyaapps.Home.HomeFragment
 import com.example.mersyaapps.Messege.MessageFragment
 import com.example.mersyaapps.More.MoreFragment
+import com.example.mersyaapps.Note.NoteFragment
 import com.example.mersyaapps.databinding.ActivityBaseBinding
 import com.example.mersyaapps.databinding.ActivitySeventhBinding
 
@@ -38,6 +39,10 @@ class BaseActivity : AppCompatActivity() {
                 }
                 R.id.more -> {
                    replaceFragment(MoreFragment())
+                    true
+                }
+                R.id.note -> {
+                    replaceFragment(NoteFragment())
                     true
                 }
                 else -> false // return false jika item tidak ada yang di klik
