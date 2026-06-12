@@ -1,6 +1,7 @@
 package com.example.mersyaapps.data.dao
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
@@ -17,4 +18,6 @@ interface NoteDao {
     @Update
     suspend fun update (note: NoteEntity)
 
+    @Delete
+    suspend fun delete(note: NoteEntity)
 }
