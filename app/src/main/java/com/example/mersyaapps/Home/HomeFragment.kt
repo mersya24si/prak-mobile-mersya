@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mersyaapps.AuthActivity
 import com.example.mersyaapps.Home.Pertemuan4.FourthActivity
 import com.example.mersyaapps.Home.Pertemuan10.TenthActivity
+import com.example.mersyaapps.Home.pertemuan_13.ThirteenthActivity
 import com.example.mersyaapps.Home.pertemuan7.SeventhActivity
 import com.example.mersyaapps.Home.pertemuan9.NinthActivity
 import com.example.mersyaapps.Home.photo.PhotoAdapter
@@ -75,6 +76,12 @@ class HomeFragment : Fragment() {
         // Pertemuan 10
         binding.btnToTenth.setOnClickListener {
             val intent = Intent(requireContext(), TenthActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Pertemuan 13
+        binding.btnToThirteenth.setOnClickListener {
+            val intent = Intent(requireContext(), ThirteenthActivity::class.java)
             startActivity(intent)
         }
 
