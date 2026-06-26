@@ -75,7 +75,7 @@ class ThirdActivity : AppCompatActivity() {
 //            NotificationHelper.showNotification(
 //                this,
 //                "Pesanan Anda",
-//                "Halo $noTujuan, Pesanan Anda Sedang Diproseshj",
+//                "Hjalo $noTujuan, Pesanan Anda Sedang Diproseshj",
 //                intent
 //            )
             val calendar = Calendar.getInstance().apply {
