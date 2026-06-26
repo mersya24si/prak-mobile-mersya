@@ -14,6 +14,8 @@ import com.example.mersyaapps.R
 import com.example.mersyaapps.databinding.ActivityThirdBinding
 import com.example.mersyaapps.utils.NotificationHelper
 import com.example.mersyaapps.utils.PermissionHelper
+import com.example.mersyaapps.utils.ReminderHelper
+import java.util.Calendar
 
 class ThirdActivity : AppCompatActivity() {
 
@@ -69,13 +71,26 @@ class ThirdActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
 
-            val intent = Intent(this, ThirdResultActivity::class.java)
-            NotificationHelper.showNotification(
-                this,
-                "Pesanan Anda",
-                "Halo $noTujuan, Pesanan Anda Sedang Diproses",
-                intent
+//            val intent = Intent(this, ThirdResultActivity::class.java)
+//            NotificationHelper.showNotification(
+//                this,
+//                "Pesanan Anda",
+//                "Halo $noTujuan, Pesanan Anda Sedang Diproses",
+//                intent
+//            )
+            val calendar = Calendar.getInstance().apply {
+                add(Calendar.MINUTE, 1) // Tambah 1 menit dari sekarang
+            }
+
+            ReminderHelper.setReminder(
+                context = this, //Jika panggil di fragment maka requireContext()
+                hour = calendar.get(Calendar.HOUR_OF_DAY),
+                minute = calendar.get(Calendar.MINUTE),
+                title = "Reminder 1 Menit",
+                message = "Halo $noTujuan, reminder ini muncul 1 menit setelah tombol ditekan",
+                targetActivity = ThirdResultActivity::class.java
             )
+            Toast.makeText(this, "Silahkan tunggu 1 Menit untuk menerima Notifikasi...", Toast.LENGTH_SHORT).show()
 
         }
     }
